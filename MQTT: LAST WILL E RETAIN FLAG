@@ -1,0 +1,30 @@
+1)
+Last Will:
+Quando o sistema cair de forma abrupta, ele envia uma mensagem.
+Exemplos de uso, meu celular acabou a bateria e desligou sozinho, 
+ou o pc desconectou da tomada em uma partida, ele envia uma mensagem. 
+O que ocorre quando estou online no whatsapp e o wifi desliga, fico offline.
+
+Retain Flag:
+O sistema recebe uma mensagem, porem nao tem ninguem para receber ele armazena para poder enviar, e tambem é útil para não ficar enviando sempre a mesma coisa.
+Exemplos de uso, se eu entro no whatsapp eu fico online, nao vou ficar online, online online, ele envia so uma vez quando voce entra.
+
+2)
+
+https://colab.research.google.com/drive/180WEO_-eM-x9DIJivuS6pyzDduw5hIPi?usp=sharing
+
+É uma simulação do que acontece em um servidor,
+Como o Last Will  e o Retain Flag funcionam, 
+
+
+Quando o conectar é chamado, ele se 'apresenta' no servidor. 
+Se ele passar uma mensagem (topico e mensagem), Ele vai guardar e se eu morrer do nada, vai publicar isso no meu lugar
+
+
+No publicar, foi feito a lógica da Retain Flag. Toda vez que uma mensagem chega, antes de avisar os outros, o servidor salva ou atualiza essa mensagem. A ultima mensagem sempre fica guardada.
+
+Quando um aplicativo chama o método inscrever passando o nome de um tópico. Se houver uma mensagem lá, o app recebe o status da casa.
+
+simular_queda_de_energia
+Esta é a função que simula uma queda, quando ela é acionada, o dispositivo não avisa nada, o servidor percebe e ve se o dispositivo deixou alguma mensagem como offline, 
+se encontrar, ele mesmo chama a função de publicar a mensagem de 'OFFLINE' para os outros.
